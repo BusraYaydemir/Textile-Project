@@ -1,0 +1,435 @@
+﻿/* GENERAL DEFINITONS */
+:root {
+    --main-color: #d1b399;
+    --black-color: #5B4D43;
+    --border: 0.1rem solid rgba(255, 255, 255, 0.4);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: 0.2s ease;
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-padding-top: 9rem;
+    scroll-behavior: smooth;
+}
+
+    html::-webkit-scrollbar {
+        width: 0.8rem;
+        background-color: #efeeee;
+    }
+
+    html::-webkit-scrollbar-thumb {
+        border-radius: 3rem;
+        background-color: var(--black-color);
+    }
+
+body {
+    background-color: var(--black-color);
+}
+
+section {
+    padding: 3.5rem 7%;
+}
+
+a {
+    color: var(--black-color);
+    text-decoration: none;
+}
+
+.btn {
+    margin-top: 1rem;
+    display: inline-block;
+    padding: 2rem 3.75rem;
+    border-radius: 30rem;
+    font-size: 1.7rem;
+    color: var(--black-color);
+    background-color: var(--main-color);
+    cursor: pointer;
+}
+
+    .btn:hover {
+        opacity: 0.5;
+    }
+
+
+.heading {
+    color: var(--main-color);
+    text-transform: uppercase;
+    font-size: 4rem;
+    margin-bottom: 3.5rem;
+    border-bottom: 0.1rem solid #efeeee;
+}
+
+
+    .heading span {
+        text-transform: uppercase;
+        color: #efeeee;
+    }
+
+
+.search-input {
+    font-size: 1.6rem;
+    color: var(--black-color);
+    padding: 1rem;
+    text-transform: none;
+    border-radius: 3rem;
+}
+
+
+/* HEADER SECTION STARTS */
+
+
+.header {
+    background-color: var(--main-color);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+    margin: 1rem 0 2rem 0;
+    box-shadow: 0px 0px 17px -2px rgba(0, 0, 0, 0.75);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    min-height:10vh;
+}
+
+    .header .navbar a {
+        margin: 0 1rem;
+        font-size: 1.6rem;
+        color: var(--black-color);
+        border-bottom: 0.1rem solid transparent;
+        font-weight: 900;
+    }
+
+        .header .navbar .active,
+        .header .navbar a:hover {
+            border-color: var(--black-color);
+            padding-bottom: 0.5rem;
+        }
+
+.btn-asp {
+    padding: 0rem;
+    margin: 0rem;
+}
+
+
+
+.header .buttons button {
+    cursor: pointer;
+    font-size: 2.5rem;
+    background-color: transparent;
+    color: var(--black-color);
+    margin-left: 1rem;
+}
+
+    .header .buttons button:hover {
+        opacity: 0.5;
+    }
+
+.name {
+    font-size: 1.9rem;
+    color: var(--black-color);
+    margin-right: 10px;
+}
+
+/* HEADER SECTION ENDS */
+
+/* HOME SECTION STARTS */
+
+.home {
+    min-height: 100vh;
+    margin-top: -14.5rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+
+.home .content h3 {
+    font-size: 4rem;
+    color: white;
+    text-align: center;
+    font-weight: 200;
+}
+
+
+/* HOME SECTION ENDS */
+
+
+/* PRODUCTS SECTION STARTS */
+
+.menu .box-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    gap: 1.5rem;
+}
+
+    .menu .box-container .box {
+        text-align: center;
+        background-color: #efeeee;
+        position: relative;
+        border-radius: 3rem;
+        height: 60rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 3rem;
+    }
+
+        .menu .box-container .box:hover {
+            background-color: #efeeee;
+            opacity: 0.99;
+        }
+
+        .menu .box-container .box .box-head {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: relative;
+            z-index: 10;
+        }
+
+            .menu .box-container .box .box-head .title {
+                font-size: 1.4rem;
+            }
+
+            .menu .box-container .box .box-head .name {
+                font-size: 1.5rem;
+                font-weight: bold;
+                text-align: start;
+                overflow-wrap: anywhere;
+                text-transform: capitalize;
+            }
+
+    .menu .box-container img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 100%;
+        object-fit: cover;
+        transform: translate(-50%, -50%);
+        border-radius: 3rem;
+    }
+
+    .menu .box-container .box:hover .image {
+        transform: scale(1.2);
+    }
+
+    .menu .box-container .box-bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        z-index: 10;
+    }
+
+        .menu .box-container .box-bottom .info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+
+            .menu .box-container .box-bottom .info .price {
+                font-size: 3rem;
+            }
+
+            .menu .box-container .box-bottom .info .amount {
+                font-size: 1.4rem;
+            }
+
+        .menu .box-container .box-bottom .product-btn a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            width: 6.5rem;
+            height: 6.5rem;
+            border: 0.2rem solid var(--black-color)
+        }
+
+            .menu .box-container .box-bottom .product-btn a:hover {
+                background-color: var(--black-color);
+            }
+
+
+            .menu .box-container .box-bottom .product-btn a i {
+                font-size: 1.6rem;
+                color: var(--black-color);
+            }
+
+            .menu .box-container .box-bottom .product-btn a:hover i {
+                color: var(--main-color);
+            }
+
+            .vendor span {
+                font-size: 1.4rem;
+                color: var(--black-color);
+                font-weight: bold;
+            }
+/* PRODUCTS SECTION ENDS */
+
+/* ORDERS SECTION STARTS */
+
+.order {
+    min-height: 100vh;
+}
+
+    .order table {
+        margin-left: -50rem;
+        margin-right: -50rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        align-items:center;
+        margin-left: 0;
+        margin-right: 0;
+        color: var(--black-color);
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+
+.order table th {
+    background-color: var(--black-color);
+    color: var(--main-color);
+    border: 2px solid var(--main-color);
+}
+
+
+        .order table tr {
+            background-color: var(--main-color);
+            color: var(--black-color);
+            border: 2px solid var(--black-color);
+            text-align:center;
+        }
+
+.order table caption {
+    color: #efeeee;
+    font-size: 2rem;
+}
+
+/* ORDERS SECTION ENDS */
+
+
+/* LOGIN SECTION STARTS */
+
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    margin-bottom: 10px; 
+}
+
+.login p {
+    font-size: 1.4rem;
+    color: var(--main-color);
+    text-align:center;
+    float:none;
+}
+
+.login hr {
+    color: #efeeee;
+}
+
+.headingName {
+    color:#efeeee;
+    font-size: 7rem;
+    text-decoration: none;
+    margin-bottom:7rem;
+    margin-top: 7rem;
+}
+
+/* LOGIN SECTION ENDS */
+
+/* SPECIAL LOGIN SECTION STARTS */
+
+.specialLogin {
+    min-height:100vh;
+}
+
+.specialLogin table {
+    width: 100%;
+    align-items:center;
+    font-size: 2rem;
+    color: var(--main-color);
+    border: 2px solid #efeeee;
+    padding: 2rem;
+}
+
+    .specialLogin table td {
+        align-items: center;
+        padding: 2rem;
+        text-align: center;
+    }
+
+    .specialLogin table .textbox {
+        font-size: 2rem;
+        color: var(--black-color);
+        background-color: var(--main-color);
+        width: 80%;
+        padding: 1rem;
+
+    }
+
+
+
+.btnlog {
+    margin-left: 5rem;
+}
+/* SPECIAL LOGIN SECTION ENDS */
+
+
+
+
+
+
+
+/* FOOTER SECTION STARTS */
+.footer {
+    padding: 0rem 0;
+    background-color: var(--main-color);
+    text-align: center;
+}
+
+
+    .footer .share {
+        display: flex;
+        justify-content: center;
+        padding: 1rem 0;
+    }
+
+
+        .footer .share a {
+            width: 5rem;
+            height: 5rem;
+            line-height: 5rem;
+            color: #efeeee;
+            font-size: 2rem;
+            border: var(--border);
+            border-radius: 50%;
+            margin: 0.3rem;
+        }
+
+            .footer .share a:hover {
+                background-color: var(--black-color);
+            }
+
+/*FOOTER SECTION ENDS */
+

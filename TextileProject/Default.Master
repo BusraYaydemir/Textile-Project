@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Default.master.cs" Inherits="TextileProject.Default" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- CSS FILE FOR ICONS  -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer" />
+
+
+    <title>Cloth Enchantment</title>
+
+    <link href="/style.css" rel="stylesheet" />
+
+    <%--<script>
+        function showLogoutDropdown() {
+            var logoutDropdown = document.getElementById("logoutDropdown");
+            logoutDropdown.style.display = "block";
+        }
+
+        function hideLogoutDropdown() {
+            var logoutDropdown = document.getElementById("logoutDropdown");
+            logoutDropdown.style.display = "none";
+        }
+    </script>--%>
+
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+         <!-- HEADER SECTION STARTS -->
+        <header class="header">
+
+            <!-- LOGO -->
+            <a href="Home.aspx" class="logo">
+                <h1>Cloth Enchantment</h1>
+            </a>
+
+            <!-- NAVBAR SECTION STARTS-->
+            <nav class="navbar active">
+                <a href="Home.aspx">Home</a>
+                <a href="Products.aspx">Products</a>
+                <a href="Order.aspx">Order</a>
+            </nav>
+            <!-- NAVBAR SECTION ENDS -->
+
+            <!-- LOG IN -->
+
+            
+            <div class="user-profile">
+                <span class="name">
+                    <asp:Literal ID="ltUsername" runat="server"/>
+                </span>
+                <asp:Button ID="btnLogout" runat="server" CssClass="btn btn-log btn-asp" Text="Log Out" OnClick="btnLogout_Click" Visible="false" />
+                <asp:Button ID="btnLogIn" runat="server" CssClass="btn btn-log btn-asp" Text="Log In" PostBackUrl="~/LogIn.aspx" Visible="true" />
+            </div>
+
+        </header>
+        <!-- HEADER SECTION ENDS -->
+        
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+
+        <!-- FOOTER SECTION START -->
+        <section class="footer">
+
+            <div class="share">
+                
+                <!-- SOCIAL MEDIA -->
+                <a href="https://tr-tr.facebook.com/" class="fab fa-facebook"></a>
+                <a href="https://twitter.com/?lang=tr" class="fab fa-twitter"></a>
+                <a href="https://www.instagram.com/" class="fab fa-instagram"></a>
+                <a href="https://tr.linkedin.com/" class="fab fa-linkedin"></a>
+                <a href="https://tr.pinterest.com/" class="fab fa-pinterest"></a>
+            </div>
+
+        </section>
+        
+            
+        
+    </form>
+</body>
+</html>
